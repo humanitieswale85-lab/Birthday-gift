@@ -1,0 +1,332 @@
+<html>
+        <head><title>Downloaded HTML</title></head>
+        <body>
+            <pre style="white-space: pre-wrap; word-wrap: break-word;"><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday!</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<!-- Confetti Library -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+
+background:linear-gradient(-45deg,#ff758c,#ff7eb3,#8ec5fc,#e0c3fc);
+background-size:400% 400%;
+animation:bg 10s ease infinite;
+
+}
+
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.card{
+
+width:90%;
+max-width:420px;
+padding:35px;
+border-radius:25px;
+
+background:rgba(255,255,255,.15);
+
+backdrop-filter:blur(10px);
+
+text-align:center;
+
+color:white;
+
+box-shadow:0 15px 35px rgba(0,0,0,.2);
+
+animation:pop 1s ease;
+
+z-index:5;
+
+}
+
+@keyframes pop{
+
+0%{
+transform:scale(.5);
+opacity:0;
+}
+
+100%{
+transform:scale(1);
+opacity:1;
+}
+
+}
+
+h1{
+
+font-size:2.3rem;
+
+margin-bottom:10px;
+
+animation:glow 2s infinite alternate;
+
+}
+
+@keyframes glow{
+
+from{
+text-shadow:0 0 10px white;
+}
+
+to{
+text-shadow:0 0 30px yellow;
+}
+
+}
+
+h2{
+
+font-weight:300;
+margin-bottom:20px;
+
+}
+
+p{
+
+font-size:17px;
+line-height:1.7;
+
+margin-bottom:25px;
+
+}
+
+button{
+
+padding:15px 30px;
+
+border:none;
+
+border-radius:50px;
+
+font-size:18px;
+
+cursor:pointer;
+
+background:#fff;
+
+color:#ff4f81;
+
+font-weight:bold;
+
+transition:.3s;
+
+}
+
+button:hover{
+
+transform:scale(1.08);
+
+background:#ffe600;
+
+}
+
+.balloon{
+
+position:absolute;
+
+bottom:-150px;
+
+width:60px;
+
+height:80px;
+
+border-radius:50%;
+
+animation:float linear infinite;
+
+opacity:.85;
+
+}
+
+.balloon::after{
+
+content:'';
+
+position:absolute;
+
+width:2px;
+
+height:80px;
+
+background:white;
+
+left:50%;
+
+top:80px;
+
+}
+
+.red{background:#ff4d6d;left:10%;animation-duration:8s;}
+.blue{background:#4dabf7;left:30%;animation-duration:10s;}
+.yellow{background:#ffd43b;left:50%;animation-duration:9s;}
+.green{background:#69db7c;left:70%;animation-duration:11s;}
+.purple{background:#b197fc;left:90%;animation-duration:8s;}
+
+@keyframes float{
+
+0%{
+transform:translateY(0);
+}
+
+100%{
+transform:translateY(-120vh);
+}
+
+}
+
+.footer{
+
+margin-top:25px;
+font-size:14px;
+opacity:.8;
+
+}
+
+@media(max-width:500px){
+
+h1{
+font-size:1.9rem;
+}
+
+h2{
+font-size:1.1rem;
+}
+
+p{
+font-size:15px;
+}
+
+button{
+
+width:100%;
+font-size:17px;
+
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="balloon red"></div>
+<div class="balloon blue"></div>
+<div class="balloon yellow"></div>
+<div class="balloon green"></div>
+<div class="balloon purple"></div>
+
+<div class="card">
+
+<h1>🎉 Happy Birthday! 🎂</h1>
+
+<h2>Wishing You a Wonderful Day!</h2>
+
+<p>
+May your birthday be filled with happiness,
+love, laughter, and countless unforgettable moments.
+May all your dreams come true and may success always
+follow you. Have an amazing year ahead! ❤️✨
+</p>
+
+<button onclick="celebrate()">
+🎁 Celebrate!
+</button>
+
+<div class="footer">
+Made with ❤️
+</div>
+
+</div>
+
+<script>
+
+function celebrate(){
+
+confetti({
+particleCount:200,
+spread:180,
+origin:{y:0.6}
+});
+
+}
+
+function autoConfetti(){
+
+var duration=6000;
+var end=Date.now()+duration;
+
+(function frame(){
+
+confetti({
+particleCount:4,
+angle:60,
+spread:70,
+origin:{x:0}
+});
+
+confetti({
+particleCount:4,
+angle:120,
+spread:70,
+origin:{x:1}
+});
+
+if(Date.now()<end){
+requestAnimationFrame(frame);
+}
+
+}());
+
+}
+
+window.onload=function(){
+
+autoConfetti();
+
+setTimeout(function(){
+
+confetti({
+particleCount:350,
+spread:360,
+startVelocity:40
+});
+
+},1000);
+
+}
+
+</script>
+
+</body>
+</html></pre>
+        </body>
+    </html>
